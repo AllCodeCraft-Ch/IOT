@@ -1,0 +1,16 @@
+//slave2
+#include<Wire.h>
+void setup() {
+  Wire.begin(9); //8-127
+  Wire.onRequest(requestEvent);
+
+
+}
+
+void loop() {
+  delay(100);
+}
+
+void requestEvent():{
+  Wire.write("Computer Engineering/n"); //ถ้าส่งไม่เต็มไบต์ จะทำการเติมตัวสุดท้ายให้เต็มจำนวนที่ Request
+}
